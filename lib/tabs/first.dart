@@ -8,7 +8,10 @@ import 'package:connectppf/components/rounded_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:connectppf/components/color_loader_4.dart';
 import 'package:connectppf/components/dialog.dart';
+import 'package:flutter_js/flutter_js.dart';
+import 'package:flutter/services.dart';
 class FirstTab extends StatelessWidget {
+  static const platform = const MethodChannel("com.flutter.epic/epic");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +37,7 @@ class FirstTab extends StatelessWidget {
               RoundedButton(
                 text: "CONNECT",
                 press: () {
+                  Printy();
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ColorLoader4()),
@@ -46,4 +50,15 @@ class FirstTab extends StatelessWidget {
       ),
     );
   }
+  void Printy() async {
+    String value;
+    try{
+      value = await platform.invokeMethod("Printy");
+    } catch (e){
+      print(e);
+    }
+
+    print(value);
+  }
 }
+

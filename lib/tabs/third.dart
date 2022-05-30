@@ -23,7 +23,7 @@ class ThirdTab extends StatelessWidget {
             children: <Widget>[
               SizedBox(height: 30,),
               Text(
-                "Host Meeting",
+                "Screen Sharing",
                 style: TextStyle(color: Colors.black,
                     fontSize: 30,
                     fontFamily: 'Quicksand'

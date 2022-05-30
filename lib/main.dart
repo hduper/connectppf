@@ -10,9 +10,9 @@ import 'package:connectppf/tabs/third.dart';
 import 'package:connectppf/buttons/simple_round_only_icon_button.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/gestures.dart';
-
-void main() => runApp(MyApp());
-
+void main() {
+  runApp(MyApp());
+}
 class MyApp extends StatelessWidget {
   // This widget is the root of the application.
   @override
@@ -135,4 +135,5 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
       ),
     );
   }
+
 }

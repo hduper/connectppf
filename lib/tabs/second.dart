@@ -7,8 +7,26 @@ import 'package:connectppf/constants.dart';
 import 'package:connectppf/components/rounded_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:connectppf/components/color_loader_4.dart';
-
+import 'package:flutter/services.dart';
 class SecondTab extends StatelessWidget {
+  static const platform = const MethodChannel("com.flutter.ftp/ftp");
+  void Printy() async {
+    String value;
+    try{
+      value = await platform.invokeMethod("Printy");
+    } catch (e){
+      print(e);
+    }
+
+    print(value);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+  /*
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,5 +63,5 @@ class SecondTab extends StatelessWidget {
         ),
       ),
     );
-  }
+  } */
 }
